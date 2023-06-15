@@ -1,0 +1,68 @@
+Algoritmo desafio_zombie
+	Definir muestra , matriz Como Cadena
+	Definir validacion Como Logico
+	Definir largoMuestra , n Como Entero
+
+////Ingrese una muestra a analizar:
+	muestra = "ACCDBBADDDCCBACABDCBDCBADBDACBBBBDAABBCCBAACCABDBDCDDABDBDADAAACBBBBCDDDCBBBDDCDABBDDABDBDBBACADCDAAADACDDDACCDCACDDABACDCCCAABDDCCACDADDBCBAACCDBCBCDDDCAACCBAADCBBBCDCBBACBDCCDDADBABCAABBACABDCAACCBDADDCAAACCDBDBBCDDDDDACBCDDADDDDCBADADBDCADDABBCDAACBCCDDDADDADADAACCACDCDDABCCCADABBACDACCAADDBCBCCDADBCCADAAABDDDAABBABCADDCCAADDCDDCDCACBADADACADDAADCBDBCDBDDACDCBCDCCABBDCBACDDACCCDADBCADCACAAABBBCADDDDBCBACDBDAAADDDACCDACBBBADACCCDCACCBACDADBCBBDADACABAACBCCADDCCCCACCCCADBCCDAADCAABBABAADDBDADDABABCCABBCDDACCADAAADBBCCDBADCADCBBDADACCDDBCAAABBBDCAAAACBAADBABBABACDDBBCBDCDCADABABBDADCBADAACDBCBDABADBCBADCACADAABCDDCABACDDBDCBCBDCAAACBDABBCACBACCCBACACDCADBDCDCDDCAACDBDCBACDBBDAABDBBCBAAADBABDBAACAAACDCDAAABABDDDBCACADCBBAADCCDABCCCBBCACCBAABDAADDDCDACDDDBCDCCBABDABACCDCDCDABAABCABBADADCBDDACDDCDDCDACDADADCACBCDABABDDCCDBCCDABACDBDAABDBDDDBADDBACABDCDDBACDDBBDDBBACBCCAACABBDADDBCAACCBCCDADDBCAADDADCCCBAAABABBBBBCABAACADBCBBABACCABCDAABADCCCCDCCADDDCCABBDDDAAADDADACBBBCBDAADACABABBAACCCADADDABDBCADDDCCDBBCCBCDCDBDDDDCACDACDBBBDDBADDACADDADDABCACDCBBADDABBBDCBBDCDAABADDDDDBCACCCCAAACBCBCDBACCCDACCCDBCBDCBADBCDDACCDBDBDBCAAACDDCBAABDBCAADCADDBABABDCBCBCBBBCACBCADDCAAAAAACBBACBBCCACBDCDDDDADCAAACBABDDBDADBAADCBABDDBCDBABDBAADDDBACBBBCCCDBDDBDDAADBBADADDDCBCACBABCDBBABAADABCABCDBACBBBCDBADADDBDCBDABBDDDCDDCCACDCBDCADABAABCDCAACCDDBADBDBCDACAAACBCADCCCBAC"
+	
+	largoMuestra = longitud(muestra)
+	n = raiz(largoMuestra)
+	
+	Dimension matriz[n,n]
+	
+	validacion = validarMuestra(muestra)
+	Si validacion == Verdadero Entonces
+		crearMatriz(muestra,largoMuestra,n)
+//		tieneGenZ(muestra)
+	SiNo
+		Escribir "Muestra no cumple con los requerimientos"
+	FinSi
+	
+FinAlgoritmo
+
+//Subprograma validarMuestra
+Subproceso validacion <- validarMuestra(muestra)
+	Definir largoMuestra Como Entero
+	Definir validacion Como Logico
+	largoMuestra = longitud(muestra)	
+	Si largoMuestra == 9 O largoMuestra == 16 O largoMuestra == 1369 Entonces
+		validacion = Verdadero
+	SiNo
+		validacion = Falso	
+	FinSi	
+FinSubProceso
+
+//Subprograma crearMatriz
+SubProceso crearMatriz(muestra,largoMuestra,n)
+	Definir  i , j , k , medidaMatriz Como Entero
+	Definir dibujarMatriz Como Cadena
+
+	Dimension dibujarMatriz[n,n]
+	k = 0
+	Para i = 0 hasta n - 1 Hacer
+		para j = 0 hasta n - 1 Hacer
+			dibujarMatriz(i,j) = SubCadena(muestra,k,k)
+			Escribir sin saltar 	dibujarMatriz(i,j) , "  "
+			k = k + 1
+		FinPara
+		Escribir ""
+	FinPara
+FinSubProceso
+
+//Subproceso tieneGenZ(muestra)
+//
+//SubProceso tieneGenZ(muestra)
+//	Definir i , j , k , n , largoMuestra Como Entero
+//	Definir diagonal_1 , diagonal_2 Como Cadena
+//	
+//	largoMuestra = longitud(muestra)
+//	n = raiz(largoMuestra)
+//	Dimension diagonal_1[n] , diagonal_2[n]
+//	
+//	Para i = 0 hasta (n - 1) Hacer
+//		j = (n - 1)
+//		muestra(i,i) = diagonal_1[i]
+//	FinPara
+//FinSubProceso
+
